@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ods.objetivo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="ods">
+
+    <ion-card-header>
+      <img src="{{ods.imagem}}" alt="imagem">
+      <ion-icon *ngIf="!ods.imagem" name="videocam-off"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>{{ods.numero}}º: {{ods.objetivo}}</h1> <br>
+      <p>{{ods.desc}}</p>
+      <ion-icon name="pricetag" [color]="ods.favorito===true ? 'primary' : ('light')"></ion-icon>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

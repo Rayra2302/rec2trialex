@@ -1,0 +1,7 @@
+{
+  "name": "at2Alex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

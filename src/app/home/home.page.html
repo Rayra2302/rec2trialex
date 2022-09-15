@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      At de
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="listaods">
+    <ion-item-sliding *ngFor="let ods of listaods">
+
+      <ion-item lines="full" (click)="exibirOds(ods)">
+
+        <ion-thumbnail slot="start">
+          <img *ngIf="ods.imagem" src="{{ods.imagem}}" alt="ods">
+          <ion-icon *ngIf="!ods.imagem" name="videocam-off"></ion-icon>
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>{{ods.numero}}º</h1>
+            <h2>{{ods.objetivo}}</h2>
+            <ion-icon name="pricetag" [color]="ods.favorito===true ? 'primary' : ('light')"></ion-icon>
+          </div>
+        </ion-label>
+
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="primary" (click)="exibirAlertaFavorito(ods)">
+          <ion-icon slot="icon-only" name="pricetag"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
